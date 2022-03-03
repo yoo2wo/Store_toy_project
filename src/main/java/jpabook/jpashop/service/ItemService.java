@@ -20,7 +20,7 @@ public class ItemService {
         itemRepository.save((item));
     }
 
-    @Transactional
+    @Transactional //여기서도 setter말고 다른 메서드를 생성하는게 훨씬 좋다. //변경 감지
     public void updateItem(Long id, String name, int price, int stockQuantity) {
         Item item = itemRepository.findOne(id);
         item.setName(name);
